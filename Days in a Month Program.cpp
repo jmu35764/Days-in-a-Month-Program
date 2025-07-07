@@ -1,20 +1,44 @@
 // Days in a Month Program.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+// Things didn't get updated on github, this comments serves as a change to commit
 
 #include <iostream>
 
 int main()
 {
-    std::cout << "Hello World!\n";
+	int month, year;
+
+	std::cout << "Enter a month (1-12) \n";
+	std::cin >> month;
+
+	std::cout << "Enter a year \n";
+	std::cin >> year;
+
+	if (month == 1 || month == 3 || month == 5 || month == 7 || month == 8 || month == 10 || month == 12)
+	{
+		//if (month == 1)
+		std::cout << "31 Days \n";
+	}
+	else if (month == 4 || month == 6 || month == 9 || month == 11)
+	{
+		std::cout << "30 Days \n";
+	}
+	else if (month == 2)
+	{
+		if (((year % 100) == 0 && (year % 400) == 0) || ((year % 4) == 0 && (year % 100) != 0))
+		{
+			std::cout << "29 Days \n";
+		}
+		else
+		{
+			std::cout << "28 Days \n";
+		}
+	}
+	else
+	{
+		std::cout << "Type a number between 1-12 \n";
+	}
+		return 0;
+
+	
 }
 
-// Run program: Ctrl + F5 or Debug > Start Without Debugging menu
-// Debug program: F5 or Debug > Start Debugging menu
-
-// Tips for Getting Started: 
-//   1. Use the Solution Explorer window to add/manage files
-//   2. Use the Team Explorer window to connect to source control
-//   3. Use the Output window to see build output and other messages
-//   4. Use the Error List window to view errors
-//   5. Go to Project > Add New Item to create new code files, or Project > Add Existing Item to add existing code files to the project
-//   6. In the future, to open this project again, go to File > Open > Project and select the .sln file
